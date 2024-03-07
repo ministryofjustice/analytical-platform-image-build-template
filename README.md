@@ -16,8 +16,8 @@ The repository comes with the following preset files:
     - release.yml
     - super-linter.yml
     - dependency-review.yml
-    - CODEOWNERS
-    - dependabot.yml
+  - CODEOWNERS
+  - dependabot.yml
 - scripts
   - build-and-test.sh
 - test
@@ -26,7 +26,6 @@ The repository comes with the following preset files:
 - .editorconfig
 - LICENSE
 - .gitignore
-- CHANGELOG.md
 - README
 - Ministry of Justice Compliance Badge (public repositories only)
 ```
