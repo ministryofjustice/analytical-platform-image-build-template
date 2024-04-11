@@ -13,8 +13,9 @@ The repository comes with the following preset files:
 <!-- generated with `tree -a -I '.git'` -->
 ```text
 ├── .devcontainer
-│   ├── devcontainer-lock.json
-│   └── devcontainer.json
+│   ├── devcontainer.json
+│   └── devcontainer-lock.json
+├── Dockerfile
 ├── .editorconfig
 ├── .github
 │   ├── CODEOWNERS
@@ -23,9 +24,9 @@ The repository comes with the following preset files:
 │       ├── build-and-test.yml
 │       ├── dependency-review.yml
 │       ├── release.yml
+│       ├── scan-image.yml
 │       └── super-linter.yml
 ├── .gitignore
-├── Dockerfile
 ├── LICENSE
 ├── Makefile
 ├── README.md
@@ -85,11 +86,11 @@ If your repository is private with no GitHub Advanced Security license, remove t
 
 ### Dockerfile
 
-make sure to add your own build logic to the bottom of the `Dockerfile`.
+Make sure to add your own build logic to the bottom of the `Dockerfile`.
 
 ### Tests
 
 > [!NOTE]
 > No application testing has been added to this template, this is to be implemented by the developer as required.
 
-please make sure to add any additional container structure tests needed to the `container-structure-test.yml`.
+Please make sure to add any additional container structure tests needed to the `container-structure-test.yml`.
