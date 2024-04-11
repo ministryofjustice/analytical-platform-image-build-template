@@ -35,7 +35,7 @@ RUN <<EOF
 apt-get update --yes
 
 apt-get install --yes \
-  "apt-transport-https=2.4.11" \
+  "apt-transport-https=2.4.12" \
   "curl=7.81.0-1ubuntu1.16"
 
 apt-get clean --yes
