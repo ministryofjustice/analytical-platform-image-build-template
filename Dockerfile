@@ -1,6 +1,6 @@
 # checkov:skip=CKV_DOCKER_2:Healthcheck instructions have not been added to container images
-#This image is an example base image for this template and can be replaced to fit user needs
-FROM public.ecr.aws/ubuntu/ubuntu@sha256:722b3bddfe96b95441f626cf94974d79213090ecbd16954f71d7c080fb413561
+# This image is an example base image for this template and can be replaced to fit user needs
+FROM public.ecr.aws/ubuntu/ubuntu@sha256:12fb86d81bc4504d8261a91c83c54b9e5dcdf1d833ba0fe42ec9e0ee09a2b0ba
 
 LABEL org.opencontainers.image.vendor="Ministry of Justice" \
       org.opencontainers.image.authors="Analytical Platform (analytical-platform@digital.justice.gov.uk)"\
@@ -14,29 +14,34 @@ ENV CONTAINER_USER="analyticalplatform" \
     CONTAINER_GID="1000" \
     DEBIAN_FRONTEND="noninteractive"
 
+SHELL ["/bin/bash", "-e", "-u", "-o", "pipefail", "-c"]
+
 # User
-RUN groupadd \
-      --gid ${CONTAINER_GID} \
-      ${CONTAINER_GROUP} \
-    && useradd \
-         --uid ${CONTAINER_UID} \
-         --gid ${CONTAINER_GROUP} \
-         --create-home \
-         --shell /bin/bash \
-         ${CONTAINER_USER}
+RUN <<EOF
+groupadd \
+  --gid ${CONTAINER_GID} \
+  ${CONTAINER_GROUP}
+
+useradd \
+  --uid ${CONTAINER_UID} \
+  --gid ${CONTAINER_GROUP} \
+  --create-home \
+  --shell /bin/bash \
+  ${CONTAINER_USER}
+EOF
 
 # Base
-RUN apt-get update --yes \
-    && apt-get install --yes \
-         "apt-transport-https=2.4.11" \
-         "curl=7.81.0-1ubuntu1.15" \
-         "git=1:2.34.1-1ubuntu1.10" \
-         "gpg=2.2.27-3ubuntu2.1" \
-         "python3.10=3.10.12-1~22.04.3" \
-         "python3-pip=22.0.2+dfsg-1ubuntu0.4" \
-         "unzip=6.0-26ubuntu3.2" \
-    && apt-get clean --yes \
-    && rm --force --recursive /var/lib/apt/lists/*
+RUN <<EOF
+apt-get update --yes
+
+apt-get install --yes \
+  "apt-transport-https=2.4.11" \
+  "curl=7.81.0-1ubuntu1.16"
+
+apt-get clean --yes
+
+rm --force --recursive /var/lib/apt/lists/*
+EOF
 
 USER ${CONTAINER_USER}
 
