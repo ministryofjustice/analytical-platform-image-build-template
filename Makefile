@@ -3,6 +3,9 @@ IMAGE_NAME = ghcr.io/ministryofjustice/analytical-platform-image-build-template:
 test: build
 	container-structure-test test --config test/container-structure-test.yml --image $(IMAGE_NAME)
 
+scan: build
+	trivy image --vuln-type  os,library --severity  CRITICAL --exit-code 1 $(IMAGE_NAME)
+
 build:
 	@ARCH=`uname -m`; \
 	case $$ARCH in \
