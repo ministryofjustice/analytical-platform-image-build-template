@@ -1,6 +1,6 @@
 # checkov:skip=CKV_DOCKER_2:Healthcheck instructions have not been added to container images
 # This image is an example base image for this template and can be replaced to fit user needs
-FROM public.ecr.aws/ubuntu/ubuntu@sha256:12fb86d81bc4504d8261a91c83c54b9e5dcdf1d833ba0fe42ec9e0ee09a2b0ba
+FROM public.ecr.aws/ubuntu/ubuntu@sha256:d0122618c593c336a3c8094b53cd3768379a67e3b4a04faf69cb8317aced43a5
 
 LABEL org.opencontainers.image.vendor="Ministry of Justice" \
       org.opencontainers.image.authors="Analytical Platform (analytical-platform@digital.justice.gov.uk)"\
