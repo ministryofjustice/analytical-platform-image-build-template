@@ -9,9 +9,9 @@ LABEL org.opencontainers.image.vendor="Ministry of Justice" \
       org.opencontainers.image.url="{your repo url}"
 
 ENV CONTAINER_USER="analyticalplatform" \
-    CONTAINER_UID="1000" \
+    CONTAINER_UID="1001" \
     CONTAINER_GROUP="analyticalplatform" \
-    CONTAINER_GID="1000" \
+    CONTAINER_GID="1001" \
     DEBIAN_FRONTEND="noninteractive"
 
 SHELL ["/bin/bash", "-e", "-u", "-o", "pipefail", "-c"]
