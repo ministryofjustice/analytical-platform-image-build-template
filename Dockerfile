@@ -1,6 +1,6 @@
 # checkov:skip=CKV_DOCKER_2:Healthcheck instructions have not been added to container images
 # This image is an example base image for this template and can be replaced to fit user needs
-FROM public.ecr.aws/ubuntu/ubuntu@sha256:12fb86d81bc4504d8261a91c83c54b9e5dcdf1d833ba0fe42ec9e0ee09a2b0ba
+FROM public.ecr.aws/ubuntu/ubuntu@sha256:4eef301bd53e72f08185a0d2692653f7773c712158d0923ba1942f7125ddd003
 
 LABEL org.opencontainers.image.vendor="Ministry of Justice" \
       org.opencontainers.image.authors="Analytical Platform (analytical-platform@digital.justice.gov.uk)"\
@@ -9,9 +9,9 @@ LABEL org.opencontainers.image.vendor="Ministry of Justice" \
       org.opencontainers.image.url="{your repo url}"
 
 ENV CONTAINER_USER="analyticalplatform" \
-    CONTAINER_UID="1000" \
+    CONTAINER_UID="1001" \
     CONTAINER_GROUP="analyticalplatform" \
-    CONTAINER_GID="1000" \
+    CONTAINER_GID="1001" \
     DEBIAN_FRONTEND="noninteractive"
 
 SHELL ["/bin/bash", "-e", "-u", "-o", "pipefail", "-c"]
@@ -35,8 +35,8 @@ RUN <<EOF
 apt-get update --yes
 
 apt-get install --yes \
-  "apt-transport-https=2.4.12" \
-  "curl=7.81.0-1ubuntu1.16"
+  "apt-transport-https=2.7.14build2" \
+  "curl=8.5.0-2ubuntu10.1"
 
 apt-get clean --yes
 
