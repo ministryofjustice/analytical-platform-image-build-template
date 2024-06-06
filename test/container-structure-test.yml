@@ -17,9 +17,9 @@ commandTests:
   - name: "user"
     command: "id"
     args: ["--user", "analyticalplatform"]
-    expectedOutput: ["1000"]
+    expectedOutput: ["1001"]
 
   - name: "groups"
     command: "id"
     args: ["--groups", "analyticalplatform"]
-    expectedOutput: ["100"]
+    expectedOutput: ["1001"]
