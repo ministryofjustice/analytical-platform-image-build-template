@@ -32,6 +32,4 @@ jobs:
         uses: super-linter/super-linter/slim@b4515bd4ad9d0aa4681960e053916ab991bdbe96 # v6.8.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          LINTER_RULES_PATH: /
-          NATURAL_LANGUAGE_CONFIG_FILE: .textlintrc
 
