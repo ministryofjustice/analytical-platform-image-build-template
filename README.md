@@ -38,7 +38,11 @@ The repository comes with the following preset files:
 
 Once you've created your repository using this template, perform the following steps:
 
+<!-- textlint-disable -->
+
 ### Update README
+
+<!-- textlint-enable -->
 
 Edit this README.md file to document your project accurately. Take the time to create a clear, engaging, and informative README.md file. Include information like what your project does, how to install and run it, how to contribute, and any other pertinent details.
 
