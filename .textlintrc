@@ -1,5 +1,8 @@
 {
     "filters": {
-        "comments": true
+      "comments": true
+    },
+    "rules": {
+      "terminology": true
     }
-}
+  }
