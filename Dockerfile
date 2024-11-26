@@ -35,7 +35,7 @@ RUN <<EOF
 apt-get update --yes
 
 apt-get install --yes \
-  "curl=8.9.1-2ubuntu2"
+  "curl=8.9.1-2ubuntu2.1"
 
 apt-get clean --yes
 
