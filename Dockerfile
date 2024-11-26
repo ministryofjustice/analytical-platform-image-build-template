@@ -36,7 +36,7 @@ apt-get update --yes
 
 apt-get install --yes \
   "apt-transport-https=2.7.14build2" \
-  "curl=8.5.0-2ubuntu10.4"
+  "curl=8.5.0-2ubuntu10.5"
 
 apt-get clean --yes
 
